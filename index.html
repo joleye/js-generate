@@ -21,17 +21,22 @@
 </pre>
 </div>
 <script type="text/javascript">
-var input = $('#list').html();
-var out = [];
-var arr = input.split('\n')
-$.each(arr, function (i, val) {
-    if (val) {
-        var a = trim_head(val);
-        var b = format_Upper(a);
-        var c = first_Upper(b)
-        out.push(c);
-    }
-});
+    $('button').click(functon(){
+                var input = $('#input').val();
+            var out = [];
+            var arr = input.split('\n')
+            $.each(arr, function (i, val) {
+                if (val) {
+                    var a = trim_head(val);
+                    var b = format_Upper(a);
+                    var c = first_Upper(b)
+                    out.push(c);
+                }
+            });
+    
+            $('#output').html(out.join('\n'));
+     });
+
 
 console.log(out.join('\n'));
 
