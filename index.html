@@ -41,7 +41,7 @@
     <textarea class="form-control" style="height: 200px;" id="input"></textarea>
 
     <div class="btn">
-        <button class="form-control">create</button>
+        <button class="btn btn-info"><span class="glyphicon glyphicon-play-circle"></span> create Model</button>
     </div>
 
     <pre id="output">
@@ -66,11 +66,10 @@
     });
 
     function trim_head(v) {
-        if (v.indexOf('sys_') > -1) {
-            return v.substring(4);
-        } else if (v.indexOf('t_') > -1) {
-            return v.substring(2);
-        } else {
+        var index = v.indexOf('_');
+        if(index > -1){
+            return v.substring(index);
+        }else{
             return v;
         }
     }
